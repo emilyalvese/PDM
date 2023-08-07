@@ -1,0 +1,12 @@
+Revisão ultrabásica de Programação Orientada a Objetos: 
+
+1) Quais são os pilares da orientação a objetos, explique-os brevemente. 
+R: java POO ; Herança
+
+2) Implemente alguns exemplos abaixo e reflita sobre os pilares e vantagens da P.O.O. 
+(e) Analise o código correlacione os trechos de código com as vantagens que você mencionou sobre P.O.O na questão anterior. 
+R: 
+
+3) Faça o que é solicitado nos itens a seguir.
+(f) Analise e explique os trechos de código correlacionando as características de linguagens com suporte a programação orientada a objetos.
+R: 
