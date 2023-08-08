@@ -1,12 +1,37 @@
 Revisão ultrabásica de Programação Orientada a Objetos: 
 
 1) Quais são os pilares da orientação a objetos, explique-os brevemente. 
-R: java POO ; Herança
+R: Abstração: Abstrair algo significa esconder os detalhes da implementação dentro de algo. abstraindo certos detalhes, você é capaz de criar uma base de código reutilizável, simples de entender e facilmente alterável.Pode-se definir uma classe como abstrata no momento de sua criação ao selecionar a opção “abstract”
+É uma classe que não podemos instanciar, apenas herdar; 
+Encapsulamento: objetos são utilizados para representar entidades do mundo real e encapsulam os dados e os comportamentos relacionados a esses elementos. O encapsulamento permite que os detalhes de implementação de um objeto sejam alterados sem afetar o restante do sistema, tornando o código mais flexível e fácil de manter. Com isso, os objetos podem ser reutilizados em diferentes partes do sistema sem que haja preocupação com os detalhes de implementação.
+Herança: Herança é um conceito da orientação a objetos que permite que classes compartilhem atributos e métodos, através de "heranças" ; Dizemos que uma classe herda atributos de outra; 
+Polimorfismo: é a habilidade de objetos de classes diferentes responderem a mesma mensagem de diferentes maneiras. Ou seja, várias formas de responder à mesma mensagem. 
 
 2) Implemente alguns exemplos abaixo e reflita sobre os pilares e vantagens da P.O.O. 
-(e) Analise o código correlacione os trechos de código com as vantagens que você mencionou sobre P.O.O na questão anterior. 
-R: 
+e) Analise o código correlacione os trechos de código com as vantagens que você mencionou sobre P.O.O na questão anterior. 
+R: Encapsulamento: public class Endereco
+public String nome;
+
+Herança: 
+public class Pessoa extends Endereco
+
 
 3) Faça o que é solicitado nos itens a seguir.
-(f) Analise e explique os trechos de código correlacionando as características de linguagens com suporte a programação orientada a objetos.
-R: 
+f) Analise e explique os trechos de código correlacionando as características de linguagens com suporte a programação orientada a objetos.
+R: Abstração: public abstract double area();
+	public abstract double perimetro();
+
+Polimorfismo: public double area() {
+        return altura*largura;
+    }
+
+    public double perimetro() {
+        return 2*(altura+largura);
+    }
+public double area() {
+      return Math.PI*Math.pow(raio, 2);
+  }
+
+  public double perimetro() {
+     return 2*Math.PI*raio;
+  }
