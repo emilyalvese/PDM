@@ -1,37 +1,54 @@
 Revisão ultrabásica de Programação Orientada a Objetos: 
 
 1) Quais são os pilares da orientação a objetos, explique-os brevemente. 
-R: Abstração: Abstrair algo significa esconder os detalhes da implementação dentro de algo. abstraindo certos detalhes, você é capaz de criar uma base de código reutilizável, simples de entender e facilmente alterável.Pode-se definir uma classe como abstrata no momento de sua criação ao selecionar a opção “abstract”
-É uma classe que não podemos instanciar, apenas herdar; 
-Encapsulamento: objetos são utilizados para representar entidades do mundo real e encapsulam os dados e os comportamentos relacionados a esses elementos. O encapsulamento permite que os detalhes de implementação de um objeto sejam alterados sem afetar o restante do sistema, tornando o código mais flexível e fácil de manter. Com isso, os objetos podem ser reutilizados em diferentes partes do sistema sem que haja preocupação com os detalhes de implementação.
-Herança: Herança é um conceito da orientação a objetos que permite que classes compartilhem atributos e métodos, através de "heranças" ; Dizemos que uma classe herda atributos de outra; 
-Polimorfismo: é a habilidade de objetos de classes diferentes responderem a mesma mensagem de diferentes maneiras. Ou seja, várias formas de responder à mesma mensagem. 
+R: 
+Abstração: 
+A abstração oculta os detalhes de implementação, criando “coisas” abstratas para serem reutilizadas de diversas maneiras diferentes, não podendo portanto instanciar , mas sim herdar. Para isso, o termo abstract deve estar presente na declaração da classe, do atributo, do método, etc.
+Encapsulamento: 
+O encapsulamento de classes, objetos, métodos, etc. serve para torná-los passíveis, ou não, de serem reutilizados de formas objetivas. Para isso são usados os encapsuladores como public e private.
+Herança: 
+A herança permite o compartilhamento de atributos e métodos entre classes, podendo assim uma classe herdar os elementos da outra e reutilizá-los. Para isso, usa-se o termo extends entre os nomes das classes na declaração da classe.
+Polimorfismo: 
+O polimorfismo possibilita que objetos de classes diferentes respondam a mesma mensagem de maneiras diferentes, como por exemplo utilizar o mesmo método da classe mãe e realizá-lo de formas diferentes.
 
-2) Implemente alguns exemplos abaixo e reflita sobre os pilares e vantagens da P.O.O. 
-e) Analise o código correlacione os trechos de código com as vantagens que você mencionou sobre P.O.O na questão anterior. 
-R: Encapsulamento: public class Endereco
+
+2) e) Analise o código e correlacione os trechos de código com as vantagens que você mencionou sobre P.O.O na questão anterior. 
+R: 
+Encapsulamento: 
+Abaixo é declarada a classe pessoa com encapsulamento público, ou seja, ela é visível e passível de uso nas outras classes. Além disso, nela é declarado um atributo nome, também publico.
+public class Pessoa;
 public String nome;
 
+Agora, na classe Main, é declarado o objeto pessoa do tipo Pessoa, da classe pessoa, o que só foi possível pois esta classe é pública.O mesmo acontece para a leitura do nome dessa pessoa, que é “puxado” da classe Pessoa, sem precisar ser declarado novamente nesta nova classe.
+Pessoa pessoa = new Pessoa();
+System.out.println("Insira o nome: ");
+pessoa.nome = leitura.nextLine();
+
 Herança: 
+Abaixo, é declarada a classe Pessoa, a qual através do termo em negrito é uma extensão da classe Endereco e, portanto, herda todos os atributos e métodos nela presentes.
 public class Pessoa extends Endereco
+3) f) Analise e explique os trechos de código correlacionando as características de linguagens com suporte a programação orientada a objetos.
+R: 
+Abstração: 
+Abaixo,na classe Forma são declarados os métodos abstratos area e perimetro,os quais, por serem abstratos, estão passíveis a serem utilizados de diversas maneiras em outras classes que os herdarem.
+public abstract double area();
+public abstract double perimetro();
 
-
-3) Faça o que é solicitado nos itens a seguir.
-f) Analise e explique os trechos de código correlacionando as características de linguagens com suporte a programação orientada a objetos.
-R: Abstração: public abstract double area();
-	public abstract double perimetro();
-
-Polimorfismo: public double area() {
+Polimorfismo:
+Agora, na classe Retangulo, que é filha de Forma, os métodos da classe Forma são utilizados para calcular a área e o perímetro de retângulos, com sua devida fórmula.
+public double area() {
         return altura*largura;
     }
-
     public double perimetro() {
         return 2*(altura+largura);
     }
+
+Já na classe Circulo, que também é filha de Forma, os métodos da classe Forma são também utilizados com as devidas fórmulas para o cálculo de área e perímetro de círculos.
 public double area() {
       return Math.PI*Math.pow(raio, 2);
   }
-
   public double perimetro() {
      return 2*Math.PI*raio;
   }
+
+Ou seja, os métodos abstratos de Forma foram utilizados por classes diferentes de diferentes formas, graças ao polimorfismo.
