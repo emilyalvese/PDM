@@ -2,11 +2,7 @@ package ex3;
 
 public class Forma {
 
-	public void area() {
-		
-	}
-	public void perimetro() {
-		
-	}
+	public abstract double area();
+	public abstract double perimetro();
 	
 }
